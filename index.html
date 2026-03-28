@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swift Errand</title>
+<style>
+body {font-family: Arial; margin:0; background:#0f172a; color:white;}
+header {background:#16a34a; padding:20px; text-align:center;}
+.container {padding:20px;}
+.card {background:#1e293b; padding:20px; margin-bottom:15px; border-radius:10px;}
+button {background:#22c55e; border:none; padding:12px; color:white; width:100%; border-radius:6px;}
+input, select {width:100%; padding:10px; margin-top:10px; border-radius:6px; border:none;}
+</style>
+</head>
+<body>
+
+<header>
+<h2>⚡ Swift Errand & Delivery</h2>
+<p>Fast • Reliable • Doorstep Delivery</p>
+</header>
+
+<div class="container">
+<div class="card">
+<h3>📦 Place Order</h3>
+
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="07XXXXXXXX">
+
+<select id="service">
+<option>Package Delivery</option>
+<option>Shopping Errand</option>
+<option>Food Delivery</option>
+<option>Personal Errand</option>
+</select>
+
+<input type="text" id="location" placeholder="Your Location">
+
+<button onclick="sendOrder()">🚀 Order via WhatsApp</button>
+</div>
+
+<div class="card">
+<h3>📍 Track Order</h3>
+<button onclick="window.location.href='track.html'">Track Your Order</button>
+</div>
+</div>
+
+<script>
+function sendOrder(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let location = document.getElementById("location").value;
+
+    let msg = "🚚 ORDER%0AName:"+name+"%0APhone:"+phone+"%0AService:"+service+"%0ALocation:"+location;
+
+    window.location.href="https://wa.me/254799911088?text="+msg;
+}
+</script>
+
+</body>
+</html>

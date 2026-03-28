@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Track Order</title>
+<style>
+body {font-family:Arial; background:#0f172a; color:white; text-align:center; padding:20px;}
+.status {background:#1e293b; padding:20px; border-radius:10px;}
+</style>
+</head>
+<body>
+
+<h2>🚚 Track Your Order</h2>
+<div class="status">
+<p>📦 Order Status:</p>
+<h3 id="status">Preparing...</h3>
+</div>
+
+<script>
+let steps = ["Preparing 📦","Rider Assigned 🏍","On the Way 🚚","Delivered ✅"];
+let i=0;
+
+setInterval(()=>{
+    document.getElementById("status").innerText = steps[i];
+    i = (i+1)%steps.length;
+},3000);
+</script>
+
+</body>
+</html>
